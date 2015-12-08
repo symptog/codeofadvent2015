@@ -1,5 +1,4 @@
 fs = require 'fs'
-_ = require 'lodash'
 
 compute = (data) ->
   x = 0
@@ -18,7 +17,7 @@ compute = (data) ->
     key = '' + x + '_' + y
     if key not in lookup
       lookup[key]=obj
-  _.keys(lookup).length
+  Object.keys(lookup).length
 
 compute2 = (data) ->
   num = 0
