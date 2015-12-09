@@ -6,14 +6,13 @@ is_nice = (s) ->
   naughty = false
   for d, i in s
     if d is 'a' or d is 'e' or d is 'i' or d is 'o' or d is 'u'
-      #console.log 'vowel:', d
       vowels += 1
     ds = s[i+1]
     if ds != undefined
       if d is ds
         double = true
-      dss = d + ds
-      if dss is 'ab' or dss is 'cd' or dss is 'pq' or dss is 'xy'
+      dds = d + ds
+      if dds is 'ab' or dds is 'cd' or dds is 'pq' or dds is 'xy'
         naughty = true
         break
   vowels > 2 and double and not naughty
@@ -23,7 +22,7 @@ fs.readFile '../advent_5_input.txt', 'utf8', (err,data) ->
     console.error err
   else
     lines = data.split('\n').filter((x) -> x != '')
-    console.log lines.filter(is_nice).length
+    console.log "nice lines:", lines.filter(is_nice).length
 
 
 # Tests
