@@ -13,7 +13,7 @@ fs.readFile '../advent_1_input.txt', 'utf8', (err,data) ->
       if d is ')'
         floor -= 1
       if floor is -1 and not found
-        console.log counter
+        console.log "-1 floor at step:", counter
         found = true
       counter += 1
-    console.log floor
+    console.log "last floor:", floor
